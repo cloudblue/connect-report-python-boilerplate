@@ -1,0 +1,8 @@
+{
+    "reports": [
+        {
+            "id": "{{cookiecutter.report_name}}",
+            "class": "{{cookiecutter.report_name |title }}"
+        }
+    ]
+}
