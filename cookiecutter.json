@@ -1,0 +1,14 @@
+{
+    "project_name": "My Awesome Reports",
+    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "description": "My reports are really usefull!",
+    "author": "Globex Corporation",
+    "version": "0.1.0",
+    "license": [
+      "MIT",
+      "BSD",
+      "Apache Software License 2.0",
+      "Other, not Open-source"
+    ],
+    "use_github_actions": "n"
+  }

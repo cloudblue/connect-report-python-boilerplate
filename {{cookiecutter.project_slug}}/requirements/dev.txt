@@ -1,0 +1,3 @@
+connect-openapi-client
+connect-cli
+openpyxl
