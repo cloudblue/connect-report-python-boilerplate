@@ -1,8 +1,16 @@
 {
+    "name": "{{cookiecutter.project_name}}",
+    "description": "{{cookiecutter.description}}",
+    "version": "{{cookiecutter.version}}",
+    "language": "python",
     "reports": [
         {
-            "id": "{{cookiecutter.report_name}}",
-            "class": "{{cookiecutter.report_name |title }}"
+            "id": "{{cookiecutter.project_slug}}_1",
+            "name": "{{cookiecutter.project_name}}",
+            "description": "{{cookiecutter.description}}",
+            "class": "{{cookiecutter.package_name}}.report.{{cookiecutter.project_name|title|replace(" ", "")}}",
+            "parameters": [
+            ]
         }
     ]
 }

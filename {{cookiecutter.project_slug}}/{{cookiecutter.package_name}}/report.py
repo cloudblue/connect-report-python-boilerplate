@@ -5,7 +5,7 @@
 #
 
 
-class {{cookiecutter.project_slug|title}}:
+class {{cookiecutter.project_name|title|replace(" ", "")}}:
     def get_start_row(self):
         """
         [summary]

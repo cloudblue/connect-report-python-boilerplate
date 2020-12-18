@@ -6,21 +6,21 @@
 
 import os
 
-from {{ cookiecutter.project_slug }}.report import {{cookiecutter.project_slug|title}}
+from {{ cookiecutter.package_name }}.report import {{cookiecutter.project_name|title|replace(" ", "")}}
 
 
 def test_get_start_row():
-    report = {{cookiecutter.project_slug|title}}()
+    report = {{cookiecutter.project_name|title|replace(" ", "")}}()
     assert report.get_start_row() == 2
 
 
 def test_get_start_col():
-    report = {{cookiecutter.project_slug|title}}()
+    report = {{cookiecutter.project_name|title|replace(" ", "")}}()
     assert report.get_start_col() == 1
 
 
 def test_get_template_file():
-    report = {{cookiecutter.project_slug|title}}()
+    report = {{cookiecutter.project_name|title|replace(" ", "")}}()
     template_file = report.get_template_file()
     assert template_file is not None
     assert isinstance(template_file, str)
@@ -30,5 +30,5 @@ def test_get_template_file():
 
 
 def test_get_progress_value_max():
-    report = {{cookiecutter.project_slug|title}}()
+    report = {{cookiecutter.project_name|title|replace(" ", "")}}()
     assert report.get_progress_value_max() == 100
