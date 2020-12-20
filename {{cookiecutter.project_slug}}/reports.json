@@ -8,7 +8,7 @@
             "id": "{{cookiecutter.project_slug}}_1",
             "name": "{{cookiecutter.project_name}}",
             "description": "{{cookiecutter.description}}",
-            "class": "{{cookiecutter.package_name}}.report.{{cookiecutter.project_name|title|replace(" ", "")}}",
+            "class": "{{cookiecutter.package_name}}.{{cookiecutter.project_slug}}.{{cookiecutter.project_name|title|replace(" ", "")}}",
             "parameters": [
             ]
         }
