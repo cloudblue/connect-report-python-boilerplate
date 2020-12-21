@@ -8,7 +8,10 @@
             "id": "{{cookiecutter.project_slug}}_1",
             "name": "{{cookiecutter.project_name}}",
             "description": "{{cookiecutter.description}}",
-            "class": "{{cookiecutter.package_name}}.{{cookiecutter.project_slug}}.{{cookiecutter.project_name|title|replace(" ", "")}}",
+            "template": "templates/template.xlsx",
+            "start_row": 2,
+            "start_col": 1,
+            "entrypoint": "{{cookiecutter.package_name}}.{{cookiecutter.project_slug}}.{{cookiecutter.project_name|lower|replace(" ", "_")}}",
             "parameters": [
             ]
         }
