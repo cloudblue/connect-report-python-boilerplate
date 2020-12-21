@@ -9,26 +9,7 @@ import os
 from {{ cookiecutter.package_name }}.{{ cookiecutter.project_slug }} import {{cookiecutter.project_name|title|replace(" ", "")}}
 
 
-def test_get_start_row():
-    report = {{cookiecutter.project_name|title|replace(" ", "")}}()
-    assert report.get_start_row() == 2
-
-
-def test_get_start_col():
-    report = {{cookiecutter.project_name|title|replace(" ", "")}}()
-    assert report.get_start_col() == 1
-
-
-def test_get_template_file():
-    report = {{cookiecutter.project_name|title|replace(" ", "")}}()
-    template_file = report.get_template_file()
-    assert template_file is not None
-    assert isinstance(template_file, str)
-    assert template_file.startswith(os.sep) is False
-    assert template_file.lower().endswith('.xlsx') is True
-    assert report.get_template_file() == 'templates/template.xlsx'
-
-def test_get_dataset(progress, client_factory, response_factory):
+def test_{{cookiecutter.project_name|title|replace(" ", "")}}(progress, client_factory, response_factory):
     """
     Test dataset generation.
     To mock http calls, you must create the list of responses
