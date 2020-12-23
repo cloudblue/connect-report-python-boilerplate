@@ -4,12 +4,10 @@
 # All rights reserved.
 #
 
-import os
-
-from {{ cookiecutter.package_name }}.{{ cookiecutter.project_slug }} import {{cookiecutter.project_name|lower|replace(" ", "_")}}
+from {{cookiecutter.package_name}}.{{cookiecutter.initial_report_slug}}.entrypoint import generate
 
 
-def test_{{cookiecutter.project_name|title|replace(" ", "")}}(progress, client_factory, response_factory):
+def test_{{cookiecutter.initial_report_slug}}(progress, client_factory, response_factory):
     """
     Test dataset generation.
     To mock http calls, you must create the list of responses
@@ -20,7 +18,7 @@ def test_{{cookiecutter.project_name|title|replace(" ", "")}}(progress, client_f
 
     responses = []
     # create a response for a count call
-    
+
     responses.append(response_factory(count=100))
 
     # create response for a collection
@@ -33,7 +31,7 @@ def test_{{cookiecutter.project_name|title|replace(" ", "")}}(progress, client_f
         {
             'id': 'OBJ-002',
             ....
-        },        
+        },
     ]))
 
     # create a response that raises an Exception
@@ -65,4 +63,5 @@ def test_{{cookiecutter.project_name|title|replace(" ", "")}}(progress, client_f
     :param response_factory: Function that creates ConnectClient reponses.
     :type response_factory: func
     """
+
     pass

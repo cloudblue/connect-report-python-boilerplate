@@ -1,8 +1,11 @@
 {
-    "project_name": "My Awesome Report",
+    "project_name": "My Awesome Project",
     "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "description": "My reports are really usefull!",
     "package_name": "reports",
+    "initial_report_name": "My Awesome Report",
+    "initial_report_slug": "{{ cookiecutter.initial_report_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "initial_report_description": "This report provides all data i need",
     "author": "Globex Corporation",
     "version": "0.1.0",
     "license": [

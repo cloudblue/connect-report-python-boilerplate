@@ -13,3 +13,15 @@ if hasattr(project_slug, 'isidentifier'):
 assert (
     project_slug == project_slug.lower()
 ), '`{}` project slug should be all lowercase'.format(project_slug)
+
+
+initial_report_slug = '{{ cookiecutter.initial_report_slug }}'
+if hasattr(initial_report_slug, 'isidentifier'):
+    assert (
+        initial_report_slug.isidentifier()
+    ), '`{}` report slug is not a valid Python identifier.'.format(initial_report_slug)
+
+assert (
+    initial_report_slug == initial_report_slug.lower()
+), '`{}` report slug should be all lowercase'.format(initial_report_slug)
+

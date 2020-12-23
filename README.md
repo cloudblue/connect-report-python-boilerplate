@@ -1,4 +1,3 @@
-
 # Cookiecutter for CloudBlue Connect Reports  
   
 Powered by [Cookiecutter](https://github.com/cookiecutter/cookiecutter), Cookiecutter for CloudBlue Connect Reports provides a framework for boostraping your custom reports for Connect.
