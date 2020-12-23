@@ -44,10 +44,13 @@ def test_{{cookiecutter.project_name|title|replace(" ", "")}}(progress, client_f
 
     responses.append(response_factory(status=404))
 
-    # create a response and pass an RQL query to check that it match
+    # create a response and pass an RQL query, ordering and select
+    # to check that it match
 
     responses.append(response_factory(
         query='in(status,(approved,rejected))',
+        ordering=['-created'],
+        select=['asset'],
         value=[],
     ))
 
