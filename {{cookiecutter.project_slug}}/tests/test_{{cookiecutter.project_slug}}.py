@@ -6,7 +6,7 @@
 
 import os
 
-from {{ cookiecutter.package_name }}.{{ cookiecutter.project_slug }} import {{cookiecutter.project_name|title|replace(" ", "")}}
+from {{ cookiecutter.package_name }}.{{ cookiecutter.project_slug }} import {{cookiecutter.project_name|lower|replace(" ", "_")}}
 
 
 def test_{{cookiecutter.project_name|title|replace(" ", "")}}(progress, client_factory, response_factory):
