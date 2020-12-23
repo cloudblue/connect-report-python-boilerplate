@@ -116,7 +116,7 @@ def client_factory():
                 if res.exception:
                     mock_kwargs['body'] = res.exception
                 else:
-                    mock_kwargs['status'] == res.status
+                    mock_kwargs['status'] = res.status or 200
             else:
                 mock_kwargs['status'] = res.status or 200
                 mock_kwargs['body'] = str(res.value)
