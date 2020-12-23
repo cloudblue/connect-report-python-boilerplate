@@ -19,6 +19,29 @@ ConnectResponse = namedtuple(
 )
 
 
+def _parse_qs(url):
+    if '?' not in url:
+        return None, None, None
+
+    url, qs = url.split('?')
+    parsed = parse_qs(qs, keep_blank_values=True)
+    ordering = None
+    select = None
+    query = None
+
+    for k in parsed.keys():
+        if k.startswith('ordering('):
+            ordering = k[9:-1].split(',')
+        elif k.startswith('select('):
+            select = k[7:-1].split(',')
+        else:
+            value = parsed[k]
+            if not value[0]:
+                query = k
+
+    return query, ordering, select
+
+
 @pytest.fixture
 def response():
     with responses.RequestsMock() as rsps:
@@ -53,31 +76,8 @@ def response_factory():
     return _create_response
 
 
-def _parse_qs(url):
-    if '?' not in url:
-        return None, None, None
-
-    url, qs = url.split('?')
-    parsed = parse_qs(qs, keep_blank_values=True)
-    ordering = None
-    select = None
-    query = None
-
-    for k in parsed.keys():
-        if k.startswith('ordering('):
-            ordering = k[9:-1].split(',')
-        elif k.startswith('select('):
-            select = k[7:-1].split(',')
-        else:
-            value = parsed[k]
-            if not value[0]:
-                query = k
-
-    return query, ordering, select
-
-
 @pytest.fixture
-def client_factory(mocker, response):
+def client_factory():
     def _create_client(connect_responses):
         response_iterator = iter(connect_responses)
 
@@ -92,7 +92,9 @@ def client_factory(mocker, response):
             if res.select:
                 assert select == res.select, 'RQL select does not match.'
 
-            mock_kwargs = {}
+            mock_kwargs = {
+                'match_querystring': False,
+            }
             if res.count is not None:
                 end = 0 if res.count == 0 else res.count - 1
                 mock_kwargs['status'] = 200
@@ -101,7 +103,7 @@ def client_factory(mocker, response):
 
             if isinstance(res.value, Iterable):
                 count = len(res.value)
-                end = 0 if res.count == 0 else count - 1
+                end = 0 if count == 0 else count - 1
                 mock_kwargs['status'] = 200
                 mock_kwargs['json'] = res.value
                 mock_kwargs['headers'] = {
@@ -119,16 +121,16 @@ def client_factory(mocker, response):
                 mock_kwargs['status'] = res.status or 200
                 mock_kwargs['body'] = str(res.value)
 
-            response.add(
-                method.upper(),
-                url=url,
-                match_querystring=False,
-                **mock_kwargs,
-            )
+            with responses.RequestsMock() as rsps:
+                rsps.add(
+                    method.upper(),
+                    url,
+                    **mock_kwargs,
+                )
 
-            self.response = requests.request(method, url, **kwargs)
-            if self.response.status_code >= 400:
-                self.response.raise_for_status()
+                self.response = requests.request(method, url, **kwargs)
+                if self.response.status_code >= 400:
+                    self.response.raise_for_status()
 
         client = ConnectClient('Key', use_specs=False)
         client._execute_http_call = MethodType(_execute_http_call, client)
