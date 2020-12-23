@@ -3,7 +3,7 @@
 # Copyright (c) {% now 'utc', '%Y' %}, {{ cookiecutter.author }}
 # All rights reserved.
 #
-def {{cookiecutter.project_name|lower|replace(" ", "_")}}(client, parameters, progress_callback):
+def generate(client, parameters, progress_callback):
     """
     Extracts data from Connect using the ConnectClient instance
     and input parameters provided as arguments, applies
