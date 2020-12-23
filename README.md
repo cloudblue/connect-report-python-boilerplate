@@ -31,10 +31,13 @@ Once cookiecutter is installed you can instantiate it against this repository:
 
 **Warning**: Please change sample data with your own desired information
 
-	project_name [My Awesome Report]: My Custom report
-	project_slug [my_awesome_report]: my_custom_report
+	project_name [My Awesome Project]: My Awesome Project
+	project_slug [my_awesome_project]:
 	description [My reports are really usefull!]:
 	package_name [reports]:
+	initial_report_name [My Awesome Report]: My Awesome Report
+	initial_report_slug [my_awesome_report]:
+	initial_report_description [This report provides all data i need]:
 	author [Globex Corporation]: ISV Inc
 	version [0.1.0]: 1.0.0
 	Select license:
@@ -70,18 +73,28 @@ The code of your report must be defined at your entrypoint, here is where system
 
 Job done? Try to run it locally!
 
-	$ ccli report list -d ./my_awesome_report
+	$ ccli report list -d ./my_awesome_project
 
-		************************************************************
+	************************************************************
 
-		My Awesome Report version 0.1.0
-		My reports are really usefull!
+	My Awesome Project version 1.0.0
 
-		************************************************************
+	************************************************************
 
-		List of available reports:
+	Welcome to My Awesome Project !
 
-		Report ID: my_awesome_report_1 - Report name: My Awesome Report 
+	My reports are really usefull!
+
+	License
+
+	My Awesome Project is licensed under the Apache Software License 2.0 license.
+
+
+	************************************************************
+
+	List of available reports:
+
+	Report ID: my_awesome_report - Report name: My Awesome Project
 
 Now if you want you can execute it also using ccli
 
