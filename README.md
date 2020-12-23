@@ -78,7 +78,6 @@ Job done? Try to run it locally!
 		My Awesome Report version 0.1.0
 		My reports are really usefull!
 
-
 		************************************************************
 
 		List of available reports:
