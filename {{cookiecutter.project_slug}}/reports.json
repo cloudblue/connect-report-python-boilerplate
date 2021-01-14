@@ -1,6 +1,6 @@
 {
     "name": "{{cookiecutter.project_name}}",
-    "description_file": "Readme.md",
+    "readme_file": "Readme.md",
     "version": "{{cookiecutter.version}}",
     "language": "python",
     "reports": [
