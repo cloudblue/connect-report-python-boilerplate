@@ -12,7 +12,7 @@
                 "provider",
                 "vendor"
             ],
-            "report_spec": 1,
+            "report_spec": "1",
             "start_row": 2,
             "start_col": 1,
             "entrypoint": "{{cookiecutter.package_name}}.{{cookiecutter.initial_report_slug}}.entrypoint.generate",
