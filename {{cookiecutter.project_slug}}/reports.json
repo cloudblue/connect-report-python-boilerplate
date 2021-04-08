@@ -1,12 +1,12 @@
 {
     "name": "{{cookiecutter.project_name}}",
-    "readme_file": "Readme.md",
+    "readme_file": "README.md",
     "version": "{{cookiecutter.version}}",
     "language": "python",
     "reports": [
         {
-            "name": "{{cookiecutter.project_name}}",
-            "readme_file": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/Readme.md",
+            "name": "{{cookiecutter.initial_report_name}}",
+            "readme_file": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/README.md",
             "template": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/template.xlsx",
             "audience": [
                 "provider",
