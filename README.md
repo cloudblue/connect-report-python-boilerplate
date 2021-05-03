@@ -19,17 +19,16 @@ In order to create your own custom report you will need to get familiar with the
 
 Creating a project that provides a report package that could be run either using the [Connect CLI](https://github.com/cloudblue/connect-cli) or directly in [Connect](https://connect.cloudblue.com) is simple.
 
-First of all, install in your local machine Cookiecutter, for example you can do it using pip:
+After installing [Connect CLI](https://github.com/cloudblue/connect-cli), you could run the following command on your terminal for having a fresh new reports project:
 
-	$ pip install cookiecutter
-
-Once cookiecutter is installed you can instantiate it against this repository:
-
-	$ cookiecutter https://github.com/cloudblue/connect-report-python-boilerplate 
+	$ cd $HOME/connect_projects
+	$ ccli project report bootstrap
  
- You'll be prompted for some values. Provide them and a Connect project will be created for you.
+You'll be prompted for some values. Provide them and a Connect project will be created for you.
 
 **Warning**: Please change sample data with your own desired information
+
+	Bootstraping report project...
 
 	project_name [My Awesome Project]: My Awesome Project
 	project_slug [my_awesome_project]:
@@ -38,6 +37,13 @@ Once cookiecutter is installed you can instantiate it against this repository:
 	initial_report_name [My Awesome Report]: My Awesome Report
 	initial_report_slug [my_awesome_report]:
 	initial_report_description [This report provides all data i need]:
+	Select initial_report_renderer:
+	1 - xlsx
+	2 - csv
+	3 - pdf
+	4 - json
+	5 - jinja2
+	Choose from 1, 2, 3, 4, 5 [1]: 1
 	author [Globex Corporation]: ISV Inc
 	version [0.1.0]: 1.0.0
 	Select license:
@@ -48,9 +54,11 @@ Once cookiecutter is installed you can instantiate it against this repository:
 	use_github_actions [y]: y
 	Done! Your report project is ready to go!
 
+	Report Project location: $HOME/connect_projects/my_awesome_project
+
 Now you can access your recently created project folder and take a look arround it:
 
-	$ cd my_awesome_report
+	$ cd my_awesome_project
 	$ ls
 
 Starting here, if you want you can put your project on a git repository, for example at github:
@@ -58,14 +66,14 @@ Starting here, if you want you can put your project on a git repository, for exa
 	$ git init
 	$ git add .
 	$ git commit -m "first commit"
-	$ git remote add origin https://github.com/cloudblue/my_custom_report.git
+	$ git remote add origin https://github.com/cloudblue/my_custom_reports_project.git
 	$ git push -u origin master
 
 In the use case that you decided to use github actions, you will notice that a first CI task will run, this one will run the sample test
 
 ## Creating your own report
 
-The creation of a requires some knowladge of [Connect Rest API](https://connect.cloudblue.com/community/api/) and the [connect-openapi-client](https://github.com/cloudblue/connect-python-openapi-client). 
+The creation of a new report requires some knowledge of [Connect Rest API](https://connect.cloudblue.com/community/api/) and the [connect-openapi-client](https://github.com/cloudblue/connect-python-openapi-client). 
 
 First, edit the reports.json file, this file is a descriptor that can be read by Connect as well as Connect CLI to understand your package. Please ensure that all properties are defined. On the parameters list, you can define the parameters that will be asked to be populated by who runs the report, just select the ones you need as described in our community portal.
 

@@ -54,6 +54,11 @@ def progress(mocker):
 
 
 @pytest.fixture
+def extra_context_callback(mocker):
+    return mocker.MagicMock()
+
+
+@pytest.fixture
 def response_factory():
     def _create_response(
         count=None,

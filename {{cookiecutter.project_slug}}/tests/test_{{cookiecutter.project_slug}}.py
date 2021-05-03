@@ -7,7 +7,7 @@
 from {{cookiecutter.package_name}}.{{cookiecutter.initial_report_slug}}.entrypoint import generate
 
 
-def test_{{cookiecutter.initial_report_slug}}(progress, client_factory, response_factory):
+def test_{{cookiecutter.initial_report_slug}}(progress, client_factory, response_factory, extra_context_callback):
     """
     Test dataset generation.
     To mock http calls, you must create the list of responses
@@ -56,12 +56,21 @@ def test_{{cookiecutter.initial_report_slug}}(progress, client_factory, response
 
     client = client_factory(responses)
 
+    # create extra context information on the renderer used, if needed
+    
+    renderer_mock = mocker.MagicMock()
+    renderer_mock.type = 'pdf'
+    renderer_mock.render.return_value = 'outfile.pdf'
+    renderer_mock.set_extra_context = extra_ctx_callback
+
     :param progress: MagicMock to use as progress_callback
     :type mocker: MagicMock
     :param client_factory: Function that returns an instance of ConnectClient
     :type client_factory: func
     :param response_factory: Function that creates ConnectClient reponses.
     :type response_factory: func
+    :param extra_context_callback: Function that creates extra context information.
+    :type extra_context_callback: func
     """
 
     pass
