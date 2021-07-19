@@ -6,8 +6,14 @@
     "reports": [
         {
             "name": "{{cookiecutter.initial_report_name}}",
-            "report_spec": "2",
             "readme_file": "{{cookiecutter.package_slug}}/{{cookiecutter.initial_report_slug}}/README.md",
+            "entrypoint": "{{cookiecutter.package_slug}}.{{cookiecutter.initial_report_slug}}.entrypoint.generate",
+            "audience": [
+                "provider",
+                "vendor"
+            ],
+            "report_spec": "2",
+            "parameters": [],
             "renderers": [
                 {
                     "id": "xlsx",
