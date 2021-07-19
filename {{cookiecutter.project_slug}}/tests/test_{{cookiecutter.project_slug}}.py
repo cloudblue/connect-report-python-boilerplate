@@ -4,7 +4,7 @@
 # All rights reserved.
 #
 
-from {{cookiecutter.package_name}}.{{cookiecutter.initial_report_slug}}.entrypoint import generate
+from {{cookiecutter.package_slug}}.{{cookiecutter.initial_report_slug}}.entrypoint import generate
 
 
 def test_{{cookiecutter.initial_report_slug}}(progress, client_factory, response_factory, extra_context_callback):
