@@ -7,7 +7,7 @@
         {
             "name": "{{cookiecutter.initial_report_name}}",
             "report_spec": "2",
-            "readme_file": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/README.md",
+            "readme_file": "{{cookiecutter.package_slug}}/{{cookiecutter.initial_report_slug}}/README.md",
             "renderers": [
                 {
                     "id": "xlsx",
@@ -18,7 +18,7 @@
                     "default": false,
                     {% endif -%}
                     "description": "Export data in Microsoft Excel 2020 format.",
-                    "template": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/templates/xlsx/template.xlsx",
+                    "template": "{{cookiecutter.package_slug}}/{{cookiecutter.initial_report_slug}}/templates/xlsx/template.xlsx",
                     "args": {
                         "start_row": 2,
                         "start_col": 1
@@ -53,7 +53,7 @@
                     "default": false,
                     {% endif -%}
                     "description": "Export data as XML",
-                    "template": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/templates/xml/template.xml.j2"
+                    "template": "{{cookiecutter.package_slug}}/{{cookiecutter.initial_report_slug}}/templates/xml/template.xml.j2"
                 },
                 {
                     "id": "pdf-portrait",
@@ -64,9 +64,9 @@
                     "default": false,
                     {% endif -%}
                     "description": "Export data as PDF (portrait)",
-                    "template": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/templates/pdf/template.html.j2",
+                    "template": "{{cookiecutter.package_slug}}/{{cookiecutter.initial_report_slug}}/templates/pdf/template.html.j2",
                     "args": {
-                        "css_file": "{{cookiecutter.package_name}}/{{cookiecutter.initial_report_slug}}/templates/pdf/template.css"
+                        "css_file": "{{cookiecutter.package_slug}}/{{cookiecutter.initial_report_slug}}/templates/pdf/template.css"
                     }
                 }
             ]

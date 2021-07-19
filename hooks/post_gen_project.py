@@ -7,7 +7,7 @@ import os
 import shutil
 from pathlib import Path
 
-pkg_name = '{{ cookiecutter.package_name }}'
+pkg_name = '{{ cookiecutter.package_slug }}'
 report_slug = '{{ cookiecutter.initial_report_slug }}'
 
 
@@ -30,16 +30,10 @@ def selected_render():
             'Please rename this file with a proper extension file.\n',
         )
 
-def remove_license():
-        os.remove('LICENSE')
-
 def remove_github_actions():
     shutil.rmtree('.github')
 
-def main():
-    if '{{ cookiecutter.license }}' == 'Other, not Open-source':
-        remove_license()
-    
+def main():    
     if '{{ cookiecutter.use_github_actions }}'.lower() == 'n':
         remove_github_actions()
 

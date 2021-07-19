@@ -33,7 +33,8 @@ You'll be prompted for some values. Provide them and a Connect project will be c
 	project_name [My Awesome Project]: My Awesome Project
 	project_slug [my_awesome_project]:
 	description [My reports are really usefull!]:
-	package_name [reports]:
+	package_name [reports]: My Super Reports Package
+	package_slug [my_super_reports_package]:
 	initial_report_name [My Awesome Report]: My Awesome Report
 	initial_report_slug [my_awesome_report]:
 	initial_report_description [This report provides all data i need]:

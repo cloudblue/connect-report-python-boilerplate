@@ -3,6 +3,7 @@
     "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "description": "My reports are really useful!",
     "package_name": "reports",
+    "package_slug": "{{ cookiecutter.package_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "initial_report_name": "My Awesome Report",
     "initial_report_slug": "{{ cookiecutter.initial_report_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
     "initial_report_description": "This report provides all data I need",
