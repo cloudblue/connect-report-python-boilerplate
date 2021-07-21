@@ -6,6 +6,15 @@ With this project you can write your own reports to execute either locally or us
 
 In order to create your own custom report you will need to get familiar with the [Connect Rest API](https://connect.cloudblue.com/community/api/) and it's OpenAPI implementation using the [connect-openapi-client](https://github.com/cloudblue/connect-python-openapi-client).
 
+## Dependencies
+
+We recommend to use instead of directly `cookiecutter` our <a href="https://github.com/cloudblue/connect-cli">**connect-cli**</a> project. This utility provides all what you need to handle the lifecycle of your project including the bootstraping, validation and adding new reports.
+
+In the case you want to bootstrap your project directly, you will require following packages:
+
+* cookiecutter
+* openpyxl
+
 ## Features
 
 * Works fit python 3.8 and 3.9
