@@ -27,9 +27,9 @@ def create_renderer_templates():
     Path(f'{pdf_template_dir}/template.html.j2').touch()
 
     # JINJA2
-    jinja2_template_dir = f'{pkg_slug}/{report_slug}/templates/j2'
+    jinja2_template_dir = f'{pkg_slug}/{report_slug}/templates/xml'
     os.makedirs(jinja2_template_dir)
-    open(f'{jinja2_template_dir}/template.ext.j2', 'w').write(
+    open(f'{jinja2_template_dir}/template.xml.j2', 'w').write(
         'Please rename this file with a proper extension file.\n',
     )
 
