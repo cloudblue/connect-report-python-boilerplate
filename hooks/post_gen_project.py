@@ -18,6 +18,8 @@ def create_renderer_templates():
     xlsx_template_dir = f'{pkg_slug}/{report_slug}/templates/xlsx'
     os.makedirs(xlsx_template_dir)
     wb = openpyxl.Workbook()
+    ws = wb.active
+    ws.title = "Data"
     wb.save(f'{xlsx_template_dir}/template.xlsx')
 
     # PDF
